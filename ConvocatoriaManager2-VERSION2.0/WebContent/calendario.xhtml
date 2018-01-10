@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:b="http://bootsfaces.net/ui">
+
+
+
+
+<h:head>
+	<title>Convocatória Manager</title>
+</h:head>
+
+<h:body>
+
+	<div style="width: 150px; margin: 2% auto; font-size: 200%; font-family: cursive;">Calendário</div>
+
+<div id="calendarioForm" style="margin: auto 22%;">
+	
+	<h:form>
+		<b:dataTable value="#{cal.calList}" var="c">
+			<b:dataTableColumn value="#{c.calendarId}" />
+			<b:dataTableColumn value="#{c.games}" label="Jogo"/>
+			<b:dataTableColumn value="#{c.result}" label="Resultado"/>
+			<b:dataTableColumn label="Acção">
+			<h:commandButton action="#{cal.goToUpdateForm(c)}" value="Alterar" style="width: 84px;color: #337ab7;margin-left:13%"/>
+			<h:commandButton action="#{test.procurarConvocatoria(c)}" value="Convocatória" style="width: 104px;color: #337ab7;"/>
+			</b:dataTableColumn>
+		</b:dataTable>
+
+		<br />
+		<h:commandButton action="#{nav.moveToIndex}" value="Retroceder"
+			style="margin-top: 20px;width: 84px;color: #337ab7;margin-left: 44%;"/>
+	</h:form>
+</div>
+</h:body>
+
+</html>

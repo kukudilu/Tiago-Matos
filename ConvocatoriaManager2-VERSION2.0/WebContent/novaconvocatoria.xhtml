@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:b="http://bootsfaces.net/ui">
+
+
+
+
+<h:head>
+	<title>Convocatória Manager</title>
+</h:head>
+
+<h:body>
+
+	<div style="width: 250px; margin: 2% auto; font-size: 200%; font-family: cursive;color: #689cd0;">Nova Convocatória</div>
+
+<div id="plantelForm" style="margin: auto 16%;">
+	
+	<h:form id="convocadosForm" horizontal="true">
+	
+	<div id="selectbox" style="margin:4% auto;width: 1000px;">
+	 <b:formGroup>
+        <b:selectOneMenu value="#{novaconv.conv.jornada}" colMd="2" label="Jornada: " labelColMd="6">
+            <f:selectItem itemLabel="(selecione)" itemValue="" />
+            <f:selectItem itemLabel="1" itemValue="1" />
+            <f:selectItem itemLabel="2" itemValue="2" />
+            <f:selectItem itemLabel="3" itemValue="3" />
+            <f:selectItem itemLabel="4" itemValue="4" />
+            <f:selectItem itemLabel="5" itemValue="5" />
+            <f:selectItem itemLabel="6" itemValue="6" />
+            <f:selectItem itemLabel="7" itemValue="7" />
+            <f:selectItem itemLabel="8" itemValue="8" />
+            <f:selectItem itemLabel="9" itemValue="9" />
+            <f:selectItem itemLabel="10" itemValue="10" />
+            <f:selectItem itemLabel="11" itemValue="11" />
+            <f:selectItem itemLabel="12" itemValue="12" />
+            <f:selectItem itemLabel="13" itemValue="13" />
+            <f:selectItem itemLabel="14" itemValue="14" />
+        </b:selectOneMenu>
+    </b:formGroup>
+     <b:formGroup>
+        <b:selectOneMenu value="#{novaconv.conv.adversario}" colMd="2" label="Adversário: " labelColMd="4" style="width:135%;">
+            <f:selectItem itemLabel="(selecione)" itemValue="" />
+            <f:selectItem itemLabel="Lobão" itemValue="Lobão" />
+            <f:selectItem itemLabel="Fiães" itemValue="Fiães" />
+            <f:selectItem itemLabel="Anta" itemValue="Anta" />
+            <f:selectItem itemLabel="Paços Brandão" itemValue="Paços Brandão" />
+            <f:selectItem itemLabel="Marfoot" itemValue="Marfoot" />
+            <f:selectItem itemLabel="Lourosa" itemValue="Lourosa" />
+            <f:selectItem itemLabel="Espinho" itemValue="Espinho" />
+        </b:selectOneMenu>
+    </b:formGroup>
+    
+    </div>
+    <br/>
+    <br/> 
+    <br/>
+    <br/>
+    <br/>
+    <br/> 
+		<b:dataTable value="#{plantel.plantelList}" var="pl" page-length-menu="5,10,20" page-length="10">
+			<b:dataTableColumn value="#{pl.playerId}" label ="Id" style="text-align: center"/>
+			<b:dataTableColumn value="#{pl.fName}" label="Nome"/>
+			<b:dataTableColumn value="#{pl.lName}" label="Apelido"/>
+			<b:dataTableColumn value="#{pl.numOfCalls}" label="Nº Convocatórias" style="width:125px;text-align: center"/>
+			<b:dataTableColumn value="#{pl.notCalls}" label="Não Convocado (seguido)" style="width:200px;text-align: center" />
+			<b:dataTableColumn label = "Ação" style="width:275px;">
+			<p:commandButton value="Convocado" actionListener="#{novaconv.fillConvocados(pl)}" style="color:white; background:#a9afad;margin-left:31%" onclick="this.style.background='green';"/>
+			</b:dataTableColumn>
+		</b:dataTable>
+
+		<br />
+		<h:commandButton action="#{nav.moveToIndex}" value="Retroceder" style="margin-top: 20px;width: 84px;float:left;color: #337ab7;margin-left:37%;"/>
+		<h:commandButton id="gravarConv" action="#{novaconv.gravarNovaConvocatoria}" value="Gravar" style="margin-top: 20px;width: 84px;color: #337ab7;">
+		<b:growl id="growlSpecific" placementFrom="top" placement-align="center" show-detail="false" global-only="false" show-summary="true" allow-dismiss="true"
+        animation-enter="animated bounceInDown" animation-exit="animated flipOutX" escape="true" />
+        <b:growl id="growlSpecific2" for="gravarConv" placementFrom="top" placement-align="center" show-detail="false" global-only="false" show-summary="true" allow-dismiss="true"
+        animation-enter="animated bounceInDown" animation-exit="animated flipOutX" escape="true"  />
+		</h:commandButton>
+		<h:commandButton action="#{novaconv.limparConvocatoria}" value="Limpar" style="margin-top: 20px;width: 84px;color: #337ab7;" onClick="window.location.reload()"/>
+	</h:form>
+</div>
+</h:body>
+
+</html>

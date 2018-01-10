@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+
+
+
+<h:head>
+	<title>Convocatória Manager</title>
+</h:head>
+
+<h:body>
+
+	<div style="margin-top: 3%;text-align: center;margin-bottom: 4%;font-size: 155%;width: 500px;margin-left: 31%;">Enviar convocatória por Email</div>
+
+	<div id="emailForm" style="margin-left: auto;width: 950px;">
+		<h:form class="form-style-7" enctype="multipart/form-data">
+
+			<b:formGroup>
+				<b:selectOneMenu value="#{email.newMail.toAddress}" colMd="2"
+					label="Para: " labelColMd="6" large-screen="one-third">
+					<f:selectItem itemLabel="(selecione)" itemValue="" />
+					<f:selectItem itemLabel="geracaoparamos@gmail.com"
+						itemValue="geracaoparamos@gmail.com" />
+					<f:selectItem itemLabel="kukudilu@sapo.pt"
+						itemValue="kukudilu@sapo.pt" />
+					<f:selectItem itemLabel="bruno_duarte1981@hotmail.com"
+						itemValue="bruno_duarte1981@hotmail.com" />
+				</b:selectOneMenu>
+			</b:formGroup>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+
+			<b:inputText label="Assunto" value="#{email.newMail.subject}"
+				small-screen="one-third" />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<b:inputTextarea label="Texto" value="#{email.newMail.bodyMessage}"
+				small-screen="one-third" /><br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<h:inputFile value="#{email.newMail.file1}" />
+			<br />
+			<br />
+		
+			<h:commandButton value="Retroceder" action="index.xhtml" style=" background: #5278cc; color: #f2f9f0; width:10%;"/>
+			<h:commandButton action="#{email.sendMail}" value="Enviar" style="margin-left: 12%;background: #5278cc;color: #f2f9f7;width: 10%;" />
+
+		</h:form>
+	</div>
+</h:body>
+
+</html>

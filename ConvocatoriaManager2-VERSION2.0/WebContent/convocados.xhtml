@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:b="http://bootsfaces.net/ui">
+
+
+<h:head>
+	<title>Convocatória Manager</title>
+</h:head>
+
+<h:body>
+
+	<div style="width: 150px; margin: 1% 43.5%; font-size: 200%; font-family: cursive;">Convocados</div>
+
+<div id="convocadosForm" style="margin: auto auto; width:45%;">
+
+	
+	<h:form>
+	<b:inputText value="#{test.calendar.games}" small-screen='one-third'  style="margin: auto 97% auto; text-align:center;background-color: #dde2e1;color: #e0b06b;width: 110%;"/><br/>
+	<br/>
+		
+		<b:dataTable value="#{test.convocadosJornada}" var="pl" searching="false" pdf="true" excel="true" copy="true" paginated='false'>
+
+			<b:dataTableColumn value="#{pl.fName}" label="Nome" style="text-align:center"/>
+			<b:dataTableColumn value="#{pl.lName}" label ="Apelido" style="text-align:center"/>
+		</b:dataTable>
+
+		<br />
+		<h:commandButton action ="calendario.xhtml" value="Retroceder" style="margin-top: 20px;width: 84px;color: #337ab7;margin-left: 32%;"/>
+		<h:commandButton action="mail.xhtml" value="E-Mail" style="margin-top: 20px;width: 84px;color: #337ab7;margin-left: 1%;"/>
+	</h:form>
+</div>
+</h:body>
+
+</html>

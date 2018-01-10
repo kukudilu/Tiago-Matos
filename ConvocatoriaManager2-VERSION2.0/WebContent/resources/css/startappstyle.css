@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+
+#startapp {
+	
+	width: 18%;
+	margin: 6% auto;
+}
+
+#startapptitle{
+	
+	text-align: center;
+    margin-top: 5%;
+    font-size: 30px;
+    color: #6d7388;
+	
+}

@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+
+#plantel{
+	
+	width: 1300px;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#titulo{
+	
+	 width: 170px;
+    margin: auto;
+    margin-top: 2%;
+    font-family: cursive;
+    color: #bac2c5;
+}
