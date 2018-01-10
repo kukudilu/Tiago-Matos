@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+
+
+
+<h:head>
+	<title>Convocatória Manager</title>
+
+</h:head>
+
+<h:body>
+
+
+	<div id="indexId" style="margin: 4% 4%;">
+		<b:panel look="primary" title="Ver Menu"
+			style="width: 40%;margin: auto;">
+			<b:pillLinks>
+				<b:navbarLinks>
+					<b:navLink value="Plantel" outcome="plantel.xhtml" icon="user" iconAlign="left"></b:navLink>
+					<b:navLink value="Nova Convocatória" outcome="novaconvocatoria.xhtml" icon="list-alt" iconAlign="left"></b:navLink>
+					<b:navLink value="Calendário" outcome="calendario.xhtml" icon="calendar" iconAlign="left"></b:navLink>
+					<b:navLink value="Definições" href="http://localhost:8080/Hibernate2/properties.xhtml" icon="cog" iconAlign="left" />
+				</b:navbarLinks>
+			</b:pillLinks>
+		</b:panel>
+	</div>
+
+	<div id="geracao" style="margin: 7% 3% 0 41%;">
+		<h:graphicImage library="images" name="geracaoparamos.png"
+			style="width:300px;margin-left:-2%;" />
+	</div>
+</h:body>
+
+</html>

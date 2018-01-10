@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:b="http://bootsfaces.net/ui">
+
+
+
+
+<h:head>
+	<title>Convocatória Manager</title>
+</h:head>
+
+<h:body>
+
+	<div style="width: 280px; margin: 3% 44%; font-size: 200%; font-family: cursive;">Novo Jogador</div>
+
+
+<div id="criarJogadorForm" style="margin: auto 40%;">
+	
+	<h:form>
+	<b:inputText label="Nome" value="#{plantel.pl.fName}"/><br/>
+	<br/>
+	<b:inputText label="Apelido" value="#{plantel.pl.lName}"/><br/>
+	<br/>
+	<b:inputText label="Nº Convocatórias" value="#{plantel.pl.numOfCalls}"/><br/>
+	<br/>
+	<b:inputText label="Não Convocado" value="#{plantel.pl.notCalls}"/><br/>
+	<br/>
+	
+	
+	<h:commandButton value="Retroceder" action="index.xhtml" style=" background: #5278cc; color: #f2f9f0;"/>
+	<h:commandButton action="#{plantel.criarJogador}" value="Criar" style=" background: #5278cc; color: #f2f9f0; width:31%;margin-left:33%" />
+	
+	</h:form>
+</div>
+</h:body>
+
+</html>
